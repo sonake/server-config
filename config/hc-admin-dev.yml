@@ -1,7 +1,7 @@
 spring:
   #redis
   redis:
-    host: localhost
+    host: 106.13.21.35
     port: 6379
     password:
     jedis:
