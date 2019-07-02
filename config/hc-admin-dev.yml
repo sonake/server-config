@@ -9,7 +9,7 @@ spring:
         max-pool-size: 15
         min-idle: 5
         connection-test-query: select 1
-        pool-name: FebsHikariCP
+        pool-name: HcHikariCP
       # 配置默认数据源
       primary: primary
       datasource:
@@ -17,7 +17,7 @@ spring:
         primary:
           username: root
           password: Jdkc0912..
-          driver-class-name: com.mysql.cj.jdbc.Driver
+          driverClassName: com.mysql.cj.jdbc.Driver
           url: jdbc:mysql://47.105.40.52:3306/sonake?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
         # 数据源-2，名称为 test
   #        test:
