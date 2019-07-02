@@ -46,7 +46,7 @@ spring:
         max-active: 2000
         max-wait: 10000
     timeout: 0
-
+    database: 1 
 
 #mybatis plus 设置
 mybatis-plus:
