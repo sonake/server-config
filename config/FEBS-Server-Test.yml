@@ -1,0 +1,49 @@
+spring:
+  boot:
+    admin:
+      client:
+        url: http://febs-monitor-admin:8401
+        username: febs
+        password: 123456
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration,com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration
+
+feign:
+  hystrix:
+    enabled: true
+  client:
+    config:
+      # default表示所有服务
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: full
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 6000
+
+security:
+  oauth2:
+    resource:
+      id: ${spring.application.name}
+      user-info-uri: http://febs-gateway:8301/auth/user
+
+info:
+  app:
+    name: ${spring.application.name}
+    description: "@project.description@"
+    version: "@project.version@"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS

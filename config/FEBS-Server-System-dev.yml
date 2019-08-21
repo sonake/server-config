@@ -1,6 +1,21 @@
 spring:
+  aop:
+    proxy-target-class: true
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  boot:
+    admin:
+      client:
+        url: http://febs-monitor-admin:8401
+        username: febs
+        password: 123456
+  freemarker:
+    check-template-location: false
+
   datasource:
     dynamic:
+      p6spy: true
       hikari:
         connection-timeout: 30000
         max-lifetime: 1800000
@@ -15,36 +30,31 @@ spring:
           password: root
           driver-class-name: com.mysql.cj.jdbc.Driver
           url: jdbc:mysql://127.0.0.1:3308/febs_cloud?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2b8
-  main:
-    allow-bean-definition-overriding: true
-  jackson:
-    date-format: yyyy-MM-dd HH:mm:ss
-    time-zone: GMT+8
-  boot:
-    admin:
-      client:
-        url: http://febs-monitor-admin:8401
-        username: febs
-        password: 123456
+  #  zipkin:
+  #    sender:
+  #      type: rabbit
+  #  sleuth:
+  #    sampler:
+  #      probability: 1
+  #  rabbitmq:
+  #    host: localhost
+  #    port: 5672
+  #    username: guest
+  #    password: guest
 
-  redis:
-    database: 0
-    host: 127.0.0.1
-    port: 6379
-    lettuce:
-      pool:
-        min-idle: 8
-        max-idle: 500
-        max-active: 2000
-        max-wait: 10000
-    timeout: 5000
 mybatis-plus:
   type-aliases-package: cc.mrbird.febs.common.entity.system
-  mapper-locations: classpath:mapper/*.xml
+  mapper-locations: classpath:mapper/*/*.xml
   configuration:
     jdbc-type-for-null: null
   global-config:
     banner: false
+security:
+  oauth2:
+    resource:
+      id: ${spring.application.name}
+      user-info-uri: http://febs-gateway:8301/auth/user
+
 info:
   app:
     name: ${spring.application.name}
