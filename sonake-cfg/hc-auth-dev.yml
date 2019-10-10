@@ -1,6 +1,6 @@
-hc:
-  auth:
-    accessTokenValiditySeconds: 186400
+hc: 15
+#auth:
+    #accessTokenValiditySeconds: 186400
     #refreshTokenValiditySeconds: 604800
     #clients:
     #- client: hc
