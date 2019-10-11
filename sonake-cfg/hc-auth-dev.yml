@@ -1,7 +1,7 @@
 ps: 15
 hc:
   auth:
-    accessTokenValiditySeconds: 86400
+    accessTokenValiditySeconds: 186400
     refreshTokenValiditySeconds: 604800
     clients:
     - client: hc
