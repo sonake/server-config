@@ -1,6 +1,23 @@
 spring:
+  datasource:
+    dynamic:
+      hikari:
+        connection-timeout: 30000
+        max-lifetime: 1800000
+        max-pool-size: 15
+        min-idle: 5
+        connection-test-query: select 1
+        pool-name: HcHikariCP
+      primary: base
+      datasource:
+        base:
+          username: root
+          password: Jdkc0912..
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://47.105.40.52:3306/sonake?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2b8
+
   rabbitmq:
-    host: 192.168.220.128
+    host: 192.168.12.128
     port: 5672
     username: guest
     password: guest
