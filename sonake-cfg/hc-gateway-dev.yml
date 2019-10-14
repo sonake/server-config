@@ -1,9 +1,12 @@
 spring:
   rabbitmq:
-    host: 192.168.12.128
+    host: 192.168.220.128
     port: 5672
     username: guest
     password: guest
+
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
 
 zuul:
   routes:
