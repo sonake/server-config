@@ -1,4 +1,10 @@
 spring:
+  rabbitmq:
+    host: 192.168.220.128
+    port: 5672
+    username: guest
+    password: guest
+
   datasource:
     dynamic:
       hikari:
@@ -23,12 +29,6 @@ mybatis-plus:
     jdbc-type-for-null: null
   global-config:
     banner: false
-
-  rabbitmq:
-    host: 192.168.220.128
-    port: 5672
-    username: guest
-    password: guest
 
   redis:
     database: 0
