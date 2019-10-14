@@ -51,3 +51,11 @@ hc:
       secret: 123456
       grantType: password,authorization_code,refresh_token
       scope: all
+    code:
+      time: 120
+      type: png
+      width: 115
+      height: 42
+      length: 4
+      charType: 2
+    anonUrl: /captcha
