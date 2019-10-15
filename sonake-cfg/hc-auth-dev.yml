@@ -52,7 +52,7 @@ hc:
       grantType: password,authorization_code,refresh_token
       scope: all
     code:
-      time: 120
+      time: 12000
       type: png
       width: 115
       height: 42
