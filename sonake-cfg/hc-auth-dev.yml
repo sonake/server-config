@@ -51,6 +51,10 @@ hc:
       secret: 123456
       grantType: password,authorization_code,refresh_token
       scope: all
+    - client: swagger
+      secret: 123456
+      grantType: password
+      scope: test
     code:
       time: 12000
       type: png
