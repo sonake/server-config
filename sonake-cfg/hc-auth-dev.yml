@@ -1,4 +1,10 @@
 spring:
+  boot:
+    admin:
+      client:
+        url: http://localhost:9060
+        username: sonake
+        password: 123456
   rabbitmq:
     host: 192.168.220.128
     port: 5672
@@ -63,3 +69,18 @@ hc:
       length: 4
       charType: 2
     anonUrl: /captcha
+
+info:
+  app:
+    name: ${spring.application.name}
+    description: "@project.description@"
+    version: "@project.version@"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
