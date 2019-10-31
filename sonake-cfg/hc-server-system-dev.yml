@@ -40,7 +40,7 @@ hc:
       email: 760946378@qq.com
       license: Apache 2.0
       licenseUrl: https://www:apache.org/licenses/LICENSE-2.0.html
-      anonUrl: /swagger-ui.html,/webjars/**,/swagger-resources/**,/v2/api-docs/**,/,/csrf
+      anonUrl: /swagger-ui.html,/webjars/**,/swagger-resources/**,/v2/api-docs/**,/,/csrf,/actuator/**
       grantUrl: http://${hc-gateway}:9030/auth/oauth/token
       name: hc_oauth_swagger
       scope: test
