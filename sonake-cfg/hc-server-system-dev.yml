@@ -1,4 +1,10 @@
 spring:
+  boot:
+    admin:
+      client:
+        url: http://localhost:9060
+        username: sonake
+        password: 123456
   rabbitmq:
     host: 47.105.40.52
     port: 5672
@@ -28,6 +34,21 @@ mybatis-plus:
     jdbc-type-for-null: null
   global-config:
     banner: false
+
+info:
+  app:
+    name: ${spring.application.name}
+    description: "@project.description@"
+    version: "@project.version@"
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS
+
 hc:
   server:
     system:
