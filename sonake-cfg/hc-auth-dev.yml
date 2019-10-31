@@ -69,7 +69,7 @@ hc:
       height: 42
       length: 4
       charType: 2
-    anonUrl: /captcha
+    anonUrl: /captcha,/actuator/**
 
 info:
   app:
