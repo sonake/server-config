@@ -19,9 +19,13 @@ spring:
     password: guest
   autoconfigure:
     exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration,com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration
+
 feign:
   hystrix:
     enabled: true
+hystrix:
+  shareSecurityContext: true
+
 info:
   app:
     name: ${spring.application.name}
