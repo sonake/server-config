@@ -23,6 +23,7 @@ spring:
 feign:
   hystrix:
     enabled: true
+#这样做会把SecurityContext对象从你当前主线程传输到Hystrix线程
 hystrix:
   shareSecurityContext: true
 
